@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (
-    <ul className="flex justify-between gap-2 items-center">
+    <ul className="flex justify-start gap-6  items-center">
       <NavLink to="/">
         <li>Home</li>
       </NavLink>
