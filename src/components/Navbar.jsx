@@ -14,7 +14,7 @@ function Navbar() {
         <Menu />
       </div>
       <div className="flex-1 relative flex sm:justify-end items-center transition-all duration-300 sm:hidden">
-        <TiThMenu onClick={handleToggleMenu} size={30} className="cursor-pointer " />
+        <TiThMenu color="white" onClick={handleToggleMenu} size={30} className="cursor-pointer " />
         {toggleMenu && <MenuToggleMobile />}
       </div>
 
