@@ -9,7 +9,7 @@ import { DataContext } from "../App";
 function Navbar() {
   const { handleToggleMenu, toggleMenu } = useContext(DataContext);
   return (
-    <div className="flex justify-start items-center bg-red-700 border border-gray-400 px-10 py-4">
+    <div className="flex  z-999 justify-start items-center bg-none px-10 py-4">
       <div className="flex-1  justify-start items-center hidden sm:block ">
         <Menu />
       </div>

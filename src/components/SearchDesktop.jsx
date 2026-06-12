@@ -9,7 +9,7 @@ function SearchDesktop() {
   return (
     <>
       <div>
-        <TfiSearch size={25} className="cursor-pointer" onClick={handleToogleSearch} />
+        <TfiSearch color="white" size={25} className="cursor-pointer" onClick={handleToogleSearch} />
       </div>
       {toggleSearch && (
         <div className="fixed top-0 right-0 w-full min-h-28 bg-white border border-gray-400 px-4 py-2">
