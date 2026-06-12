@@ -6,7 +6,7 @@ import { FaCreativeCommonsSa } from "react-icons/fa";
 
 function FooterUp() {
   return (
-    <div className="flex gap-8  sm:flex-row justify-between p-8 bg-red-300 w-full">
+    <div className="flex gap-8 flex-wrap  sm:flex-row justify-between p-8 bg-red-300 w-full">
       <IconInFooter icon={<FaRegUser size={30} />}>Cooperate with us</IconInFooter>
       <IconInFooter icon={<FaHandDots size={30} />}>Cooperate with us</IconInFooter>
       <IconInFooter icon={<FaFlagUsa size={30} />}>Cooperate with us</IconInFooter>
