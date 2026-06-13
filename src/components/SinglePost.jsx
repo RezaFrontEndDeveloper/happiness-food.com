@@ -27,9 +27,9 @@ function SinglePost() {
   }
 
   return (
-    <div>
-      <h1>{fetchdata?.title}</h1>
-      <p>{fetchdata?.body}</p>
+    <div className="flex flex-col justify-center gap-10 my-10 items-center bg-red-50 p-10 rounded-2xl w-1/2 mx-auto">
+      <h1 className="text-2xl text-red-700 ">{fetchdata?.title}</h1>
+      <p className="text-lg ">{fetchdata?.body}</p>
     </div>
   );
 }
