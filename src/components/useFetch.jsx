@@ -16,6 +16,7 @@ function useFetch(url) {
         setFetchData(data);
       } catch (err) {
         setIsError(true);
+        setIsLoading(false);
         console.log("FETCH ERROR:", err);
       } finally {
         setIsLoading(false);

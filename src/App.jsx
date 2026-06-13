@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import { createContext, useState } from "react";
 import Footer from "./components/Footer/Footer";
 import SinglePost from "./components/SinglePost";
+import ProductSinglePage from "./components/mainPage/ProductSinglePage";
 
 export const DataContext = createContext();
 
@@ -40,6 +41,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/post/:id" element={<SinglePost />} />
               <Route path="/product" element={<Products />} />
+              <Route path="/product/:id" element={<ProductSinglePage />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/contactus" element={<ContactUs />} />
               <Route path="*" element={<PageNotFound />} />

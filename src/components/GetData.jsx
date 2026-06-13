@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useFetch from "./useFetch";
 import PostsCart from "./PostsCart";
@@ -12,6 +12,10 @@ import Lottie from "lottie-react";
 
 function GetData() {
   const { isError, isLoading, fetchdata } = useFetch("https://dummyjson.com/posts");
+  console.log("PostsCart:", PostsCart);
+  console.log("BeatLoader:", BeatLoader);
+  console.log("Lottie:", Lottie);
+  console.log("Swiper:", Swiper);
 
   useEffect(() => {
     console.log("DATA", fetchdata);
@@ -26,6 +30,8 @@ function GetData() {
     <div className="flex justify-center items-center">
       <Lottie animationData={animationError} loop={true} />
     </div>
+  ) : posts.length === 0 ? (
+    <p>no posts</p>
   ) : (
     <Swiper
       modules={[Autoplay, Pagination]}
@@ -43,8 +49,8 @@ function GetData() {
       slidesPerView={4}>
       {posts?.map((item) => {
         return (
-          <SwiperSlide key={item.id}>
-            <PostsCart reactions={item.reactions} title={item.title} body={item.body} id={item.id} tags={item.tags} />
+          <SwiperSlide key={item?.id}>
+            <PostsCart reactions={item?.reactions} title={item?.title} body={item?.body} id={item?.id} tags={item?.tags} />
           </SwiperSlide>
         );
       })}
