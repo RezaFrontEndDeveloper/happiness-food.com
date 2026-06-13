@@ -7,6 +7,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import { createContext, useState } from "react";
 import Footer from "./components/Footer/Footer";
+import SinglePost from "./components/SinglePost";
 
 export const DataContext = createContext();
 
@@ -37,6 +38,7 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/post/:id" element={<SinglePost />} />
               <Route path="/product" element={<Products />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/contactus" element={<ContactUs />} />
