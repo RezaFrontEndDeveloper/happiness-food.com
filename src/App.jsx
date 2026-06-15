@@ -5,7 +5,7 @@ import AboutMe from "./pages/AboutMe";
 import ContactUs from "./pages/ContactUs";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Footer from "./components/Footer/Footer";
 import SinglePost from "./components/SinglePost";
 import ProductSinglePage from "./components/mainPage/ProductSinglePage";
@@ -13,8 +13,30 @@ import ProductSinglePage from "./components/mainPage/ProductSinglePage";
 export const DataContext = createContext();
 
 function App() {
+  const [basket, setBasket] = useState(() => {
+    const data = localStorage.getItem("basket");
+    return data ? JSON.parse(data) : [];
+  });
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [toggleBasket, setToggleBasket] = useState(false);
+
+  function addToBasket(item) {
+    setBasket((prev) => [...prev, item]);
+  }
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basket));
+  }, [basket]);
+
+  function handleToggleBasket() {
+    setToggleBasket((prev) => !prev);
+  }
+  function handleDeleteItemAtBasket(id) {
+    const newBasket = basket.filter((item) => {
+      return item.id !== id;
+    });
+    setBasket(newBasket);
+  }
 
   function handleToggleMenu() {
     setToggleMenu((prev) => !prev);
@@ -32,6 +54,13 @@ function App() {
         toggleSearch,
         setToggleSearch,
         handleToogleSearch,
+        toggleBasket,
+        handleToggleBasket,
+        setToggleBasket,
+        basket,
+        addToBasket,
+        setBasket,
+        handleDeleteItemAtBasket,
       }}>
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
