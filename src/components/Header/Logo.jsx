@@ -1,4 +1,4 @@
-import LogoWeb from "../assets/logo happiness(1).png";
+import LogoWeb from "../../assets/logo happiness(1).png";
 
 function Logo() {
   return <img src={LogoWeb} alt="" className="w-[120px]" />;

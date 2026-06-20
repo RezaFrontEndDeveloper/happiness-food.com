@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
-import animationError from "../assets/8418934e-1153-11ee-b862-8f7bf804c03e.json";
+import useFetch from "../shared/useFetch";
+import animationError from "../../assets/8418934e-1153-11ee-b862-8f7bf804c03e.json";
 import Lottie from "lottie-react";
 import { BeatLoader } from "react-spinners";
 
 function SinglePost() {
   const { id } = useParams();
 
-  const { isLoading, isError, fetchdata } = useFetch(`https://dummyjson.com/posts/${id}`);
+  const { isLoading, isError, fetchdata } = useFetch(
+    `https://dummyjson.com/posts/${id}`
+  );
 
   if (isLoading) {
     return (
