@@ -9,11 +9,18 @@ function Menu() {
       <NavLink to="/product" className="text-white text-xl hover:text-red-700">
         <li>Products</li>
       </NavLink>
-      <NavLink to="aboutme" className="text-white text-xl hover:text-red-700">
+      <NavLink to="/aboutme" className="text-white text-xl hover:text-red-700">
         <li>About</li>
       </NavLink>
-      <NavLink to="contactus" className="text-white text-xl hover:text-red-700">
+      <NavLink
+        to="/contactus"
+        className="text-white text-xl hover:text-red-700">
         <li>Contact</li>
+      </NavLink>
+      <NavLink
+        to="/Employment"
+        className="text-white text-xl hover:text-red-700">
+        <li>Employment</li>
       </NavLink>
     </ul>
   );
